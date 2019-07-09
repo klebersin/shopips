@@ -19,7 +19,7 @@
                         <td><%=data[i].apellidos%></td>
                         <td><%=data[i].usuario%></td>
                         <td><%=data[i].tipo%></td>
-                        <%if(data[i].tipo=='normal'){%>
+                        <%if(data[i].tipo=='normal'&& data[i].nombre!=kleber){%>
                         <td><a href="/hacerAdmin/<%=data[i].id%>" class="btn">Hacer administrador</a></td>
                         <%}else{%>
                             <td><a href="/hacerNormal/<%=data[i].id%>" class="btn">Hacer Normal</a></td>

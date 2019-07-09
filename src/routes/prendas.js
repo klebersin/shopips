@@ -22,13 +22,15 @@ router.get('/add',isAdmin,async(req, res, next)=>{
 router.post('/add',async(req, res, next)=>{
     const { nombre, color, precio, genero, cantidad } = req.body;
     const imageURL = req.file.filename;
+    const public_id = "   ";
     const data = {
         nombre,
         color,
         precio,
         genero,
         cantidad,
-        imageURL
+        imageURL,
+        public_id
     }
     await pool.query('INSERT INTO prendas set ?',[data], (err, tipoPrendas)=>{
         if(err){
