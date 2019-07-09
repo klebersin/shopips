@@ -45,15 +45,6 @@ const storage = multer.diskStorage({
 }) 
 app.use(multer({
     storage,
-    fileFilter:(req,res, file, cb)=>{
-        const filetypes = /jpeg|jpg|png|gif/;
-        const mimetype = filetypes.test(file.mimetype);
-        const extname = filetypes.test(path.extname(file.originalname));
-        if(mimetype&&extname){
-            return cb(null, true);
-        }
-        cb("El archivo debe ser una imagen");
-    }
 }).single('image'));
 
 //Global variables

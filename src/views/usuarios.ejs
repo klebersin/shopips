@@ -13,20 +13,19 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <%for(var i=0;i<data.length;i++){%>
                     <tr>
-                        <%for(var i=0;i<data.length;i++){%>
-                        <%if(data[i].usuario!='kleber'){%>
-                            <td><%=data[i].nombre%></td>
-                            <td><%=data[i].apellidos%></td>
-                            <td><%=data[i].usuario%></td>
-                            <td><%=data[i].tipo%></td>
-                            <%if(data.tipo[i]=='normal'){%>
-                            <td><a href="/hacerAdmin/<%=data.id%>" class="btn">Hacer aministrador</a></td> 
-                            <%}else{%>
-                            <td><a href="/hacerNormal/<%=data.id%>" class="btn">Hacer normal</a></td> 
-                            <%}}}%>
+                        <td><%=data[i].nombre%></td>
+                        <td><%=data[i].apellidos%></td>
+                        <td><%=data[i].usuario%></td>
+                        <td><%=data[i].tipo%></td>
+                        <%if(data[i].tipo=='normal'){%>
+                        <td><a href="/hacerAdmin/<%=data[i].id%>" class="btn">Hacer administrador</a></td>
+                        <%}else{%>
+                            <td><a href="/hacerNormal/<%=data[i].id%>" class="btn">Hacer Normal</a></td>
+                        <%}%>
                     </tr>
-                    
+                    <%}%>
                 </tbody>
             </table>
         </div>

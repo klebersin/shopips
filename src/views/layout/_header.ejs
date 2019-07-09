@@ -28,9 +28,10 @@
                         <li><a href="/logout">Cerrar Sesión</a></li>
                         <li><a href="/carrito"><i class="large material-icons">add_shopping_cart</i></a></li>
                     <%if(user.tipo=='admin'){%>
+                        <li><a href="/usuarios">Usuarios</a></li>
                         <li><a href="/prendas">Administras prendas</a></li>
                         <li><a href="/prendas/add">Agregar prendas</a></li>
-                        <li><a href="/usuarios">Usuarios</a></li>
+                        
                     <%}%>
                     <%}else{%>
                     <li><a href="/signin">Ingresar</a></li>
