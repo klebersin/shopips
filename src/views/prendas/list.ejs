@@ -1,0 +1,50 @@
+<%include ../layout/_header%>
+<div class="container">
+    <div class="section">
+        <a href="/prendas/add" class="btn">Agregar Prenda</a>
+    </div>
+    <div class="row">
+        <%for(var i = 0; i<data.length;i++){%>
+        <div class="col s4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="/uploads/<%=data[i].imageURL%>">
+                </div>
+                <div class="card-content">
+                    <span class="card-title"><%=data[i].nombre%></span>
+                    <p>Color: <%=data[i].color%></p>
+                    <p>Genero: 
+                        <%if(data[i].genero==0){%>
+                            Hombre
+                        <%}else{%>
+                            Mujer
+                        <%}%>
+                    </p>
+                    <p>Precio: <%=data[i].precio%></p>
+                    <p>En oferta: 
+                        <%if(data[i].oferta==0){%>
+                            No
+                        <%}else{%>
+                            Si
+                        <%}%>
+                    </p>
+                    <p>Estado: <%=data[i].estadoRegistro%></p>
+                </div>
+                <div class="card-action">
+                    <%if(data[i].oferta==0){%>
+                        <a href="/prendas/ofertar/<%=data[i].id%>">Ofertar</a>
+                    <%}else{%>
+                        <a href="/prendas/desofertar/<%=data[i].id%>">Desofertar</a>
+                    <%}%>
+                    <%if(data[i].estadoRegistro!='*'){%>
+                        <a href="/prendas/delete/<%=data[i].id%>">Eliminar</a>
+                    <%}else{%>
+                        <a href="/prendas/activar/<%=data[i].id%>">Activar</a>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+        <%}%>
+    </div>
+</div>
+<%include ../layout/_footer%>

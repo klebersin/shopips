@@ -1,0 +1,24 @@
+<%include ../layout/_header%>
+<div class="container">
+    <div class="row">
+        <div class="col s6 offset-s3">
+            <div class="card">
+                <form action="/tipoPrendas/add" method="POST">
+                    <div class="card-content">
+                        <select name="genero" id="genero">
+                            <option value="hombre">Hombre</option>
+                            <option value="mujer">Mujer</option>
+                        </select>
+                        <label for="tipo">Tipo</label>
+                        <input type="text" name="tipo" id="tipo">
+                        <div class="center-align">
+                            <button class="btn" type="submit">Agregar Tipo</button>
+                            <a href="/tipoPrendas" class="btn">Cancelar</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<%include ../layout/_footer%>

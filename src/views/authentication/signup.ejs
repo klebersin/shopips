@@ -1,0 +1,29 @@
+<%include ../layout/_header%>
+    <div class="container">
+        <div class="row">
+            <div class="col s6 offset-s3">
+                <div class="card">
+                    <form action="/signup" method="POST">
+                        <div class="card-content">
+                            <span class="card-title">Registrate</span>
+                            
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" name="nombre" minlength="2" maxlength="30" required>
+                            <label for="apellidos">Apellidos:</label>
+                            <input type="text" name="apellidos" minlength="2" maxlength="50" required>
+                            <label for="usuario" >Usuario:</label>
+                            <input type="text" name="usuario" minlength="5" maxlength="20" required>
+                            <label for="contrasena" >Contraseña:</label>
+                            <input type="password" name="contrasena" id="contrasena" minlength="5" maxlength="20" required>
+                            <div class="center-align">
+                                <button type="submit" class="btn"> Registrar </button> 
+                                <a href="/signin" class="btn">Volver</a>
+                            </div>
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<%include ../layout/_footer%>

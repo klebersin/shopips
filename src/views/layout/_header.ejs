@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      
+    <title>Tienda de ropa</title>
+</head>
+<body>
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="/hombres">Hombre</a></li>
+            <li><a href="/mujeres">Mujer</a></li>
+        </ul>
+    <div class="navbar-fixed">
+        <nav class="purple darken-4">
+            <div class="nav-wrapper  container">
+                <ul id="nav-mobile" >
+                    <li><a href="/">Inicio</a></li>
+                    
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Tienda<i class="material-icons right">arrow_drop_down</i></a></li>
+                    <li><a href="/ofertas">Ofertas</a></li>
+                    <%if(user){%>
+                        <li><a href="/profile">Perfil</a></li>
+                        <li><a href="/logout">Cerrar Sesión</a></li>
+                        <li><a href="/carrito"><i class="large material-icons">add_shopping_cart</i></a></li>
+                    <%if(user.tipo=='admin'){%>
+                        <li><a href="/prendas">Administras prendas</a></li>
+                        <li><a href="/prendas/add">Agregar prendas</a></li>
+                        <li><a href="/usuarios">Usuarios</a></li>
+                    <%}%>
+                    <%}else{%>
+                    <li><a href="/signin">Ingresar</a></li>
+                    <%}%>
+                    
+                </ul>
+            </div>
+        </nav>
+    
+    </div>

@@ -1,0 +1,35 @@
+<%include layout/_header%>
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Usuario</th>
+                        <th>Tipo de usuario</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <%for(var i=0;i<data.length;i++){%>
+                        <%if(data[i].usuario!='kleber'){%>
+                            <td><%=data[i].nombre%></td>
+                            <td><%=data[i].apellidos%></td>
+                            <td><%=data[i].usuario%></td>
+                            <td><%=data[i].tipo%></td>
+                            <%if(data.tipo[i]=='normal'){%>
+                            <td><a href="/hacerAdmin/<%=data.id%>" class="btn">Hacer aministrador</a></td> 
+                            <%}else{%>
+                            <td><a href="/hacerNormal/<%=data.id%>" class="btn">Hacer normal</a></td> 
+                            <%}}}%>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<%include layout/_footer%>

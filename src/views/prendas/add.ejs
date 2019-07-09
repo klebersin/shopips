@@ -1,0 +1,44 @@
+<%include ../layout/_header%>
+<div class="container">
+    <div class="row">
+        <div class="col s6 offset-s3">
+            <div class="card">
+                <form action="/prendas/add" method="POST" enctype="multipart/form-data">
+                    <div class="card-content">
+                        <div class="file-field input-field">
+                            <div class="btn">
+                                <span>Foto</span>
+                                <input type="file" name="image">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text">
+                            </div>
+                        </div>
+
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" minlength="2" required>
+                        <label for="color">Color</label>
+                        <input type="text" name="color" minlength="2" required>
+                        <label for="precio">Precio</label>
+                        <input type="number" name="precio" min="1" required>
+
+                        <label for="cantidad">Cantidad</label>
+                        <input type="number" name="cantidad" min="1" required>
+
+                        <label for="genero">Genero</label>
+                        <select name="genero" id="genero">
+                            <option value="0">Hombre</option>
+                            <option value="1">Mujer</option>
+                        </select>
+                        
+                        <div class="center-align">
+                            <button type="submit" class="btn"> Agregar Prenda</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%include ../layout/_footer%>

@@ -1,0 +1,31 @@
+<%include ../layout/_header%>
+<div class="container">
+    <div class="row">
+        
+        <div class="col s9 ">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Genero</th>
+                        <th>Tipo</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+        
+                <tbody>
+                    <%for(var i=0; i<data.length; i++){%>
+                    <tr>
+                        <td><%=data[i].genero%></td>
+                        <td><%=data[i].tipo%></td>
+                        <td><a href="/tipoPrendas/delete/<%=data[i].id%>" class="btn">Borrar</a></td>
+                    </tr>
+                    <%}%>
+                </tbody>
+                </table>
+        </div>
+        <div class="col s3">
+            <a href="/tipoPrendas/add" class="btn">Agregar Prenda</a>
+        </div>
+    </div>
+</div>
+<%include ../layout/_footer%>

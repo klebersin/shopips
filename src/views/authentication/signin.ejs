@@ -1,0 +1,32 @@
+<%include ../layout/_header%>
+    <div class="container">
+        <div class="section ">
+            <div class="row">
+                <div class="col s6 offset-s3">
+                    
+                    
+                    <div class="card">
+                        <form action="/signin" method="POST">
+                            <div class="card-content">
+                                <%if(message){%>
+                                    <%=message%>
+                                <%}%>
+                                <span class="card-title">Iniciar Sesión</span>
+                                <label for="usuario">Usuario:</label>
+                                <input type="text" name="usuario" id="usuario" minlength="5" maxlength="20" required>
+                                <label for="contrasena" minlength="5" maxlength="20" required>Contraseña: </label>
+                                <input type="password" name="contrasena" id="contrasena">
+                                <div class="center-align">
+                                    <button type="submit" class="btn"> Ingresar </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="center-align">
+                        <a href="/signup">Si aun no tienes una cuenta registrate</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%include ../layout/_footer%>
